@@ -7,13 +7,13 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, data: { title: 'Heroes List' }},
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
